@@ -24,7 +24,11 @@ public class CryptoAnalyser {
                 decryptor.decryptByKey(key);
                 break;
             }
-            case 3 :
+            case 3 :{
+                decryptor.init();
+                decryptor.decryptByBrute();
+                break;
+            }
             case 4 :
                 break;
         }

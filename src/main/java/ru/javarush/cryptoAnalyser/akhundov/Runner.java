@@ -15,6 +15,5 @@ public class Runner {
                     break;
             CryptoAnalyser.start(caseNumber);
         }
-
     }
 }

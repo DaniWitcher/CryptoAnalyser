@@ -34,16 +34,19 @@ public class Encryptor {
         {
                 int c;
                 while((c=reader.read())!=-1){
-                    int index = ALPHABET.indexOf(Character.toLowerCase((char)c));
-                    int newIndex = index + key;
-                    if(newIndex >= ALPHABET.size()){
-                        newIndex = newIndex - ALPHABET.size();
+                    if(ALPHABET.contains(Character.toLowerCase((char)c))){
+                        int index = ALPHABET.indexOf(Character.toLowerCase((char)c));
+                        int newIndex = index + key;
+                        if(newIndex >= ALPHABET.size()){
+                            newIndex = newIndex - ALPHABET.size();
+                        }
+                        writer.append(ALPHABET.get(newIndex));
                     }
-                    writer.append(ALPHABET.get(newIndex));
                 }
         } catch(IOException ex){
             System.out.println(ex.getMessage());
         }
+        System.out.println("Операция прошла успешно!");
     }
 
 }

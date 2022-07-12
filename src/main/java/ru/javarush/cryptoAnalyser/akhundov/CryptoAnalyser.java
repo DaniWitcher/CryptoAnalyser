@@ -9,28 +9,26 @@ public class CryptoAnalyser {
     public static int key;
     public static Scanner sc = new Scanner(System.in);
 
-    public static void start(int caseNumber){
-        switch(caseNumber)
-        {
-            case 1 : {
+    public void start(int caseNumber){
+        switch (caseNumber) {
+            case 1 -> {
                 encryptor.init();
                 encryptor.encrypt();
-                break;
             }
-            case 2 : {
+            case 2 -> {
                 System.out.println("Введите ключ : ");
                 key = sc.nextInt();
                 decryptor.init();
                 decryptor.decryptByKey(key);
-                break;
             }
-            case 3 :{
+            case 3 -> {
                 decryptor.init();
                 decryptor.decryptByBrute();
-                break;
             }
-            case 4 :
-                break;
+            case 4 -> {
+                decryptor.init();
+                decryptor.decryptByAnalyze();
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ public class Runner {
             caseNumber = sc.nextInt();
             if(caseNumber > 4)
                     break;
-            CryptoAnalyser.start(caseNumber);
+            (new CryptoAnalyser()).start(caseNumber);
         }
     }
 }
